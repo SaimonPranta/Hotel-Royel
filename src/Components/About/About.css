@@ -1,0 +1,21 @@
+.about{
+    background-color: #EF6B00;
+    /* background-color: #353E4E; */
+    height: 100%;
+    width: 100%;
+}
+.about iframe{
+    padding:20px 0;
+    float: right;
+}
+.about h6{
+    margin: 35px 0;
+    font-size: 4rem;
+    color:white;
+}
+.about p{
+    color:white;
+}
+p{
+    font-size:1.2rem;
+}

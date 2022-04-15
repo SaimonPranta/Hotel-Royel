@@ -1,0 +1,36 @@
+.from-controler{
+    background-color: #563D7C;
+    height: 100%;
+    width: 100%;
+    padding: 35px 20px;
+    border-radius: 25px;
+}
+.from-controler from input, textarea{
+    display: block;
+    border: none;
+    border-radius: 6px;
+    padding: 14px;
+    margin: 19px 0;
+    width: 100%;
+    font-size: 18px;
+}
+.from-controler from textarea{
+    padding: 26px;
+}
+.from-controler from input[type='submit']{
+    background-color: green;
+    padding: 13px;
+    width: 180px;
+    margin: auto;
+    margin-top:32px;
+    color:#fff;
+    font-weight: 500;
+    transition: 1s;
+}
+.from-controler from input[type='submit']:hover{
+    background-color: #AEB110;
+}
+.from-controler from p{
+    margin-top: 15px;
+    font-size: 15px;
+}

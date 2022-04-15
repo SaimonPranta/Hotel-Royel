@@ -1,0 +1,27 @@
+
+.butn-control{
+    padding:8px 40px;
+    background-color: green;
+    border:none;
+    color:#fff;
+    border-radius: 12px;
+}
+.butn-control:hover{
+    border-radius: 22px;
+    background-color: #aeb110;
+}
+.card-handeler h6{
+    font-size: 3rem;
+    font-weight: 400;
+}
+.card-handeler img{
+    width: 100%;
+    height: 150px;
+}
+.ros-div img{
+    width: 100%;
+    height: 200px;
+}
+.ros-div{
+    height: 60%;
+}

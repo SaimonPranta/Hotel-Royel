@@ -1,0 +1,17 @@
+#common_container{
+    background-color: red;
+    display: grid;
+    grid-template-columns: 200px 200px !important;
+}
+.sub_common_contaienr{
+    width: 30%;
+    /* background-color: yellow; */
+    width: 100%;
+    height: 100%;
+}
+.sub_common_contaienr img{
+    width: 200px;
+}
+.sub_common_contaienr samp{
+    display: inline;
+}

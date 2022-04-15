@@ -1,0 +1,41 @@
+.header{
+    background-image:url("../../images/headerbackground/banner.jpg");
+    height: 1000px;
+    width: 100%; 
+}
+
+.navbar-control img{
+    height: 100px;
+    width:100%;
+}
+.navbar-control a{
+    font-weight: 600;
+    font-size:17px;
+    color:#fff !important
+}
+.navbar-control a:hover{
+    color:black !important
+}
+
+.welcome-section .welcome-text{
+    font-size: 3.2rem;
+    margin-top:75px;
+    font-weight:600;
+}
+.welcome-section p{
+    font-size: 19px;
+    margin:10px 20px;
+}
+.welcome-section button{
+    background-color: white;
+    border:none;
+    border-radius: 8px;
+    padding:8px 45px;
+    transition:1s;
+    margin:50px;
+}
+.welcome-section button:hover{
+    background-color: #EEC237;
+    color:white;
+    border-radius: 25px;
+}
