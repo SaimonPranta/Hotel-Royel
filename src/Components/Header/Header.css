@@ -39,3 +39,20 @@
     color:white;
     border-radius: 25px;
 }
+.user-control{
+    background-color: rgb(113, 176, 41);
+    border-radius: 10px;
+}
+.user-control:hover{
+    background-color: #fff;
+}
+.user-control a{
+    text-decoration:none;
+    font-size: 1rem;
+}
+.user-control:hover svg{
+    fill:green;
+}
+.user-control:hover a{
+    color:green !important;
+}

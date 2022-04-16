@@ -8,7 +8,8 @@ import Testimonial from '../Testimonial/Testimonial';
 import './Body.css';
 import { Route, Routes } from 'react-router-dom';
 import Food from '../Food/Food';
-
+import UserProfile from '../UserProfile/UserProfile';
+import PrivetRoute from '../PrivetRoute/PrivetRoute';
 
 const Body = () => {
     return (
@@ -19,6 +20,10 @@ const Body = () => {
                     <Routes>
                         <Route path='/' element={<RoomSection></RoomSection>}></Route>
                         <Route path='/rooms' element={<Rooms></Rooms>}></Route>
+                        <Route path='/profile' element={<UserProfile></UserProfile>}></Route>
+                        <Route path='/login' element={<Rooms></Rooms>}></Route>
+                        <Route path='/protected' element={<PrivetRoute></PrivetRoute>}></Route>
+
                     </Routes>
                     <Routes>
                         <Route path='/' element={<FoodSection></FoodSection>}></Route>

@@ -2,16 +2,22 @@
     background-color: #563D7C;
     height: 100%;
     width: 100%;
-    padding: 35px 20px;
+    /* padding: 35px 20px; */
     border-radius: 25px;
+}
+.from-controler .from{
+    width: 100%;
+    padding: 35px 20px;
+    margin: auto;
+
 }
 .from-controler from input, textarea{
     display: block;
     border: none;
     border-radius: 6px;
     padding: 14px;
-    margin: 19px 0;
-    width: 100%;
+    margin: 19px auto;
+    width: 85%;
     font-size: 18px;
 }
 .from-controler from textarea{
@@ -30,7 +36,13 @@
 .from-controler from input[type='submit']:hover{
     background-color: #AEB110;
 }
-.from-controler from p{
+.from-controler from .p{
     margin-top: 15px;
     font-size: 15px;
+    color:#fff;
+}
+.from-controler from p{
+    font-size: 0.8rem;
+    color:yellow;
+    text-align: center
 }

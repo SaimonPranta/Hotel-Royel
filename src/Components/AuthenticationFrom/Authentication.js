@@ -1,6 +1,8 @@
 //FireBase Sign In Email: mandraider@gmail.com
-import React, { useState } from 'react';
-import { signUpHandler } from '../../Hooks/AuthenticationFunctions';
+import React, { useContext, useEffect, useState } from 'react';
+import { signUpHandler, writeUserData, logInHandler } from '../../Hooks/AuthenticationFunctions';
+import useCurrentUser from '../../Hooks/useCurrentUser';
+import { userContxt } from '../Home/Home';
 import './Authentication.css';
 
 const Authentication = () => {
@@ -8,10 +10,17 @@ const Authentication = () => {
         signIn: false,
         isPassword: false,
         isConfirmPassword: false,
-        passwordFrom: false
+        passwordFrom: false,
+        firstStapSignUp: false
     });
-    const [user, setUser] = useState({})
+    const [user, setUser] = useContext(userContxt)
     const [validInput, setValidInput] = useState({})
+    const { currentUser } = useCurrentUser()
+
+    useEffect(() => {
+        setUser(currentUser)
+    }, [currentUser])
+
     const handleClick = () => {
         const newObj = {
             signIn: even.signIn ? false : true
@@ -23,7 +32,7 @@ const Authentication = () => {
         const currentState = { ...even }
         const name = e.target.name
         const inputValue = e.target.value
-        if (name === "name") {
+        if (name === "username") {
             validInput[name] = inputValue
         }
         if (name === "email") {
@@ -60,8 +69,7 @@ const Authentication = () => {
             validInput[name] = inputValue
         }
         setEven(currentState)
-        // setValidInput(currentInput)
-        console.log(validInput)
+
     }
 
     const warningHandler = (e) => {
@@ -87,25 +95,30 @@ const Authentication = () => {
                 currentState['isConfirmPassword'] = true
             }
         }
-
-
         setEven(currentState)
     }
 
     const firstSignUpBtn = () => {
         const currentState = { ...even }
-        if (validInput.name && validInput.email && validInput.phoneNumber) {
+        if (validInput.username && validInput.email && validInput.phoneNumber && validInput.message) {
             currentState.passwordFrom = currentState.passwordFrom ? false : true
+        currentState["firstStapSignUp"] = true;
         }
+        currentState["firstStapSignUp"] = true;
+
         setEven(currentState)
     }
-
+   
     const singUpHandle = (e) => {
         const currentState = { ...even }
         if (validInput.email && validInput.password && validInput.confirmPassword) {
-            console.log('fireBase method call')
             signUpHandler(validInput.email, validInput.confirmPassword)
-                .then(res => console.log(res))
+            .then(res => {
+                    if (res.uid) {
+                        writeUserData(res.uid, validInput.username, validInput.email, validInput.phoneNumber, validInput.confirmPassword, validInput.message)
+                        setUser(validInput)
+                    }
+                })
         }
         if (e.target.type === 'submit') {
             if (!validInput.password) {
@@ -116,46 +129,54 @@ const Authentication = () => {
                 console.log('enter here')
             }
         }
-
         setEven(currentState)
     }
+
+    const logIn = (e) => {
+        logInHandler(validInput.email, validInput.password)
+    } 
+
+    console.log(validInput)
     return (
         <div className='from-controler' id='signup'>
             {
-                !even.passwordFrom && !even.signIn && <from className=''>
-                    <input type="text" name="name" placeholder='Full Name' onChange={inputValidation} />
+                 !even.passwordFrom && !even.signIn && <from className='from'>
+                    <input type="text" name="username" placeholder='Full Name' onChange={inputValidation} />
                     <input type="email" name="email" placeholder='Email' onChange={inputValidation} />
                     <input type="text" name="phoneNumber" placeholder='Phone Number' onChange={inputValidation} />
                     <textarea type="text" name="message" placeholder='Message' onChange={inputValidation} />
+                    {
+                        even.firstStapSignUp && <p>Note: You need to fill the full from.</p>
+                    }
                     <input type="submit" value="Sign Up" onClick={firstSignUpBtn} />
 
-                    <p>Do you have a account? <strong onClick={handleClick}>Sign In</strong></p>
+                    <p className='p'>Do you have a account? <strong onClick={handleClick}>Sign In</strong></p>
                 </from>
             }
 
             {
-                even.passwordFrom && !even.signIn && <from className=''>
+                 even.passwordFrom && !even.signIn && <from className='from'>
                     <input type="password" name="password" placeholder='Password' onBlur={warningHandler} onChange={inputValidation} />
-                    {
-                        even.isPassword && <p>Your password must be at least 6 characters long</p>
-                    }
                     <input type="password" name="confirmPassword" placeholder='Confirm Password' onBlur={warningHandler} onChange={inputValidation} />
                     {
-                        even.isConfirmPassword && <p>Confirm Password do not match</p>
+                        even.isConfirmPassword && <p>Note: Confirm Password do not match.</p>
                     }
                     {
-                        even.enterPassword && <p>Note: Please enter password</p>
+                        even.isPassword && <p>Note: Your password must be at least 6 characters long.</p>
+                    }
+                    {
+                        even.enterPassword && !even.isPassword && <p>Note: Please enter password.</p>
                     }
                     <input type="submit" value="Sign Up" onClick={singUpHandle} />
                 </from>
             }
 
             {
-                even.signIn && <from className=''>
-                    <input type="email" placeholder='Enter your Email' />
-                    <input type="password" placeholder='Password' />
-                    <input type="submit" value="Sign In" />
-                    <p>Do't  you have a account? <strong onClick={handleClick}>Sign Up</strong></p>
+                 even.signIn && <from className='from'>
+                    <input type="email" name="email" placeholder='Enter your Email' onChange={inputValidation} />
+                    <input type="password" name="password" placeholder='Password' onChange={inputValidation} />
+                    <input type="submit" value="Sign In" onClick={logIn}/>
+                    <p className='p'>Do't  you have a account? <strong onClick={handleClick}>Sign Up</strong></p>
                 </from>
             }
 

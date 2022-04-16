@@ -23,7 +23,7 @@ ul li{
     width: none;
 }
 ul li:hover{
-    background-color: #A5A5A5;
+    background-color: #fff;
     color:blue;
     border-radius: 50%;
 }
