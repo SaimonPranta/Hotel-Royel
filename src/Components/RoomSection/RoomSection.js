@@ -7,7 +7,7 @@ const FontPageOfRooms = () => {
         <>
             <div className='m-auto room-sub-container pt-5'>
                 <div className='item-1'>
-                    <img className='buttom-img' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm5SkemIv7Foi7XUgdc62sQdeYHa_wNHOqgw&usqp=CAU" loading="lazy" />
+                    <img className='buttom-img' src="https://images.unsplash.com/photo-1591088398332-8a7791972843?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWwlMjByb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60" loading="lazy" />
                 </div>
                 <div className='item-2'>
                     <img src="https://content.r9cdn.net/res/images/horizon/ui/seo/common/seo_hotels.jpg?v=aeb8c67f83d5b9fd53ca97055fc8402800bf3ce4&cluster=4" loading="lazy" />
