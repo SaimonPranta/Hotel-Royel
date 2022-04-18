@@ -1,12 +1,6 @@
-.booking-from{
-    background-color: #fff;
-    margin-top: -120px;
-    border-radius:40px;
-}
 
 .booking-from label{
     padding:7px;
-    font-size: 17px;
     font-weight: 600;
     color:#7e7e7e;
 }
@@ -23,9 +17,35 @@
     width: 80%;
     border:none;
     border-radius: 12px;
-    margin-top: 15px;
+    margin-top: 16px;
 }
 .booking-from input[type=button]:hover{
     border-radius: 22px;
     background-color: #aeb110;
+}
+
+/* ========================================
+        Responsive CSS
+======================================== */
+
+@media screen and (max-width: 1080px) {
+    .booking-from label{
+        font-size:.8rem;
+    }
+    .booking-from input{
+        padding:9px;
+    }
+
+}
+@media only screen and (min-width:200px) and (max-width: 768px){
+    .booking-from input{
+        font-size: .9rem;
+    }
+    .booking-from input[type=button]{
+        display: block;
+        margin: auto;
+        width: 40%;
+        padding: 6px;
+    }
+   
 }

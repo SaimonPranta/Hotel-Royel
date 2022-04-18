@@ -2,7 +2,6 @@
 import roomsInfo from '../../RoomsInfo/roomInfo.json';
 import CommonFrame from '../CommonFrame/CommonFrame';
 import { shuffle } from '../../Hooks/Shuffle';
-import './Rooms.css';
 
 const Rooms = () => {
     const shuffleRooms = shuffle(roomsInfo)

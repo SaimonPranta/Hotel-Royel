@@ -1,0 +1,16 @@
+.user{
+    height: 100%;
+    margin: auto;
+
+}
+
+.user button{
+    margin-top: 45px;
+    padding: 5px 12px;
+    border: none;
+    color:#fff;
+    background-color: rgb(130, 132, 238);
+}
+.user button:hover{
+    background-color: rgb(158, 154, 131);
+}

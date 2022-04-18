@@ -14,11 +14,23 @@ const useCurrentUser = () => {
 
     useEffect(() => {
         const getDataFromDatabase = (userId) => {
+            const newUser = {
+                email: "",
+                message: "",
+                password: "",
+                phoneNumber: "",
+                username: ""
+            }
             get(child(dbRef, `users/${userId}`)).then((snapshot) => {
                 if (snapshot.exists()) {
-                    console.log(snapshot.exists())
-                    setCurrentUser(snapshot.val())
-                                                            
+                    const dbUser = snapshot.val()
+                    newUser.email = dbUser.email
+                    newUser.username = dbUser.username
+                    newUser.phoneNumber = dbUser.phoneNumber
+                    newUser.password = dbUser.password
+                    newUser.message = dbUser.message
+                    setCurrentUser(newUser)
+
                 } else {
                     console.log("No data available");
                 }
@@ -35,7 +47,6 @@ const useCurrentUser = () => {
         })
 
     }, [])
-    currentUser["password"] = ""
     return { currentUser }
 };
 

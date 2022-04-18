@@ -1,7 +1,10 @@
 .header{
     background-image:url("../../images/headerbackground/banner.jpg");
-    height: 1000px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
     width: 100%; 
+    padding-bottom: 170px;
 }
 
 .navbar-control img{
@@ -10,20 +13,20 @@
 }
 .navbar-control a{
     font-weight: 600;
-    font-size:17px;
     color:#fff !important
 }
 .navbar-control a:hover{
     color:black !important
 }
+.navbar-control a{
+    text-decoration: none;
+}
 
 .welcome-section .welcome-text{
-    font-size: 3.2rem;
     margin-top:75px;
     font-weight:600;
 }
 .welcome-section p{
-    font-size: 19px;
     margin:10px 20px;
 }
 .welcome-section button{
@@ -48,11 +51,48 @@
 }
 .user-control a{
     text-decoration:none;
-    font-size: 1rem;
 }
 .user-control:hover svg{
     fill:green;
 }
 .user-control:hover a{
     color:green !important;
+}
+
+/* ============================================
+            Resposive CSS
+============================================ */
+
+
+@media only screen and (min-width:200px) and (max-width: 768px){
+    .welcome-section .welcome-text{
+        margin-top: 40px;
+    }
+    .navbar-control img{
+        width: 70%;
+    }
+    .welcome-section button{
+        padding:4px 30px;
+        transition:1s;
+        margin:20px 0 0 0;
+        font-size: .8rem;
+    }
+    .navbar-control a{
+        font-size: .8rem;
+    }
+    .navbar-control .butn-control{
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .navbar-control .butn-control:hover{
+        background-color: rgba(0, 0, 0, 0);
+        
+    }
+    .user-control{
+        background-color: rgb(0, 0, 0, 0);
+        border-radius: 10px;
+    }
+    .user-control:hover{
+        background-color: rgb(0, 0, 0, 0);
+    }
+    
 }

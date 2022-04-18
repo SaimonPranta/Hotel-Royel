@@ -1,20 +1,21 @@
 .testimonial{
     width:100%;
     height: 100%;
-    padding: 50px 0 250px 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 40px 0 250px 0;
     background-image: url('../../images/headerbackground/tes_bg.jpg');
 }
-.testimonial h5{
-    font-size: 3.3rem;
-    font-weight: 640;
+.text-center{
+    color: green;
+    margin-bottom: 20px;
+    font-family: 'Alegreya', serif;
 }
-.testimonial p{
-    font-size: 1.1rem;
-}
+
 .sub-commnt{
     background-color: green;
     width:47%;
-    height: 170px;
+    height: 100%;
     color:white;
     border-radius: 35px -0 35px;
 }
@@ -27,7 +28,6 @@
 .h6-img h6{
     float:left;
     width: 100%;
-    font-size: 1.3rem;
 }
 .h6-img img{
     width: 30px;
@@ -41,4 +41,19 @@
     height: 15px;
     border-radius: 50%;
 
+}
+
+/* ========================================
+        Responsive CSS
+======================================== */
+
+@media screen and (max-width: 768px) {
+    .sub-commnt{
+        width: 80%;
+        margin: 10px auto;
+    }
+    .carousel-dark .carousel-indicators [data-bs-target]{
+        width: 10px;
+        height: 11px;
+    }
 }

@@ -29,13 +29,15 @@ export const writeUserData = (userId, name, email, phoneNumber, password, messag
     })
 }
 export const logInHandler = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password)
+    return signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
+            return user
         })
         .catch((error) => {
             const errorCode = error.code;
-            const errorMessage = error.message;
+            return error
+            
         });
 }
 

@@ -1,0 +1,41 @@
+.room-sub-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+
+.room-sub-container img{
+    width: 100%;
+    height: 100%;
+}
+.item-1 img{
+    width: 100%;
+    height: 96%;
+}
+.item-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+
+}
+.item-3{
+    grid-row:1/3;
+}
+
+/* ========================================
+        Responsive CSS
+======================================== */
+
+@media screen and (max-width: 768px) {
+    .room-sub-container{
+        display: block;
+    }
+    .room-sub-container img{
+        margin-bottom: 15px;
+
+        border: 5px solid silver;
+    }
+    .item-2{
+        display:none;
+    }
+}

@@ -10,20 +10,26 @@ import { Route, Routes } from 'react-router-dom';
 import Food from '../Food/Food';
 import UserProfile from '../UserProfile/UserProfile';
 import PrivetRoute from '../PrivetRoute/PrivetRoute';
+import Authentication from '../AuthenticationFrom/Authentication';
+import { useLocation } from 'react-router-dom';
+
 
 const Body = () => {
+    const location = useLocation()
+    console.log(location.pathname)
     return (
         <>
-            <div className='container booking-from'>
+            <div className='container body'>
                 <div className='py-4'>
                     <BookingPeriod></BookingPeriod>
                     <Routes>
                         <Route path='/' element={<RoomSection></RoomSection>}></Route>
                         <Route path='/rooms' element={<Rooms></Rooms>}></Route>
-                        <Route path='/profile' element={<UserProfile></UserProfile>}></Route>
-                        <Route path='/login' element={<Rooms></Rooms>}></Route>
-                        <Route path='/protected' element={<PrivetRoute></PrivetRoute>}></Route>
-
+                        <Route path='/login' element={<Authentication></Authentication>}></Route>
+                        <Route path='/' element={<Rooms></Rooms>}></Route>
+                        <Route path='/profile' element={<PrivetRoute>
+                            <UserProfile/>
+                        </PrivetRoute>}></Route>
                     </Routes>
                     <Routes>
                         <Route path='/' element={<FoodSection></FoodSection>}></Route>
@@ -31,8 +37,12 @@ const Body = () => {
                     </Routes>
                 </div>
             </div>
-            <About></About>
-            <Testimonial></Testimonial>
+            {
+                location.pathname === "/" && <About></About>
+            }
+            {
+                location.pathname === "/" && <Testimonial></Testimonial>
+            }
         </>
     );
 };

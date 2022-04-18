@@ -4,7 +4,6 @@ import Lunch from '../../FoodItems/Lunch.json';
 import Dinner from '../../FoodItems/Dinner.json';
 import CommonFrame from '../CommonFrame/CommonFrame';
 import { shuffle } from '../../Hooks/Shuffle';
-import './Food.css';
 
 const Food = () => {
 

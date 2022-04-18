@@ -1,17 +1,98 @@
-#common_container{
-    background-color: red;
+.common-conttainer{
     display: grid;
-    grid-template-columns: 200px 200px !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .sub_common_contaienr{
-    width: 30%;
-    /* background-color: yellow; */
+    margin: 5px;
+    padding:5px;
+    background-color: #A8A8A8;
+}
+#img{
     width: 100%;
-    height: 100%;
+    height: 150px;
 }
-.sub_common_contaienr img{
-    width: 200px;
+.room-name{
+    margin: 0;
 }
-.sub_common_contaienr samp{
-    display: inline;
+.start{
+    display:block;
+    margin-top: 0;
+    padding:5px
 }
+.similar-icon{
+    width: 25px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+.sub_common_contaienr span{
+    margin: 7px;
+}
+.tk{
+    font-weight: 600;
+}
+.sub_common_contaienr button{
+    float: right;
+    text-align: center;
+    background-color: green;
+    color: white;
+    border:none;
+    transition: 1s;
+}
+.sub_common_contaienr button:hover{
+    background-color: #AEB110;
+}
+/* ========================================
+        Responsive CSS
+======================================== */
+@media screen and (max-width: 992px) {
+    .common-conttainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .sub_common_contaienr button{
+        font-size: .9rem;
+    }
+    .sub_common_contaienr span, strong{
+        font-size: .9rem;
+        margin: auto;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .common-conttainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .sub_common_contaienr a{
+        text-decoration: none;
+
+    }
+    .room-name{
+        text-align: center;
+    }
+    .sub_common_contaienr button{
+        font-size: .8rem;
+        float: none;
+        display: block;
+        margin: auto;
+    }
+    .start{
+        text-align: center;
+    }
+    .sub_common_contaienr span, strong{
+        font-size: .8rem;
+        display:inline-block;
+        text-align: center;
+        margin-left: 14%
+    }
+    .tk{
+        display: block;
+        text-align: center;
+        margin-bottom: 5px;
+        margin-left: 0rem;
+    }
+
+}
+
+

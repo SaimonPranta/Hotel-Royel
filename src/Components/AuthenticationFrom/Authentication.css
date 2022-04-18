@@ -1,8 +1,6 @@
 .from-controler{
     background-color: #563D7C;
-    height: 100%;
     width: 100%;
-    /* padding: 35px 20px; */
     border-radius: 25px;
 }
 .from-controler .from{
@@ -11,7 +9,7 @@
     margin: auto;
 
 }
-.from-controler from input, textarea{
+.from-controler form input, textarea{
     display: block;
     border: none;
     border-radius: 6px;
@@ -20,10 +18,10 @@
     width: 85%;
     font-size: 18px;
 }
-.from-controler from textarea{
+.from-controler form textarea{
     padding: 26px;
 }
-.from-controler from input[type='submit']{
+.from-controler form input[type='submit']{
     background-color: green;
     padding: 13px;
     width: 180px;
@@ -33,16 +31,47 @@
     font-weight: 500;
     transition: 1s;
 }
-.from-controler from input[type='submit']:hover{
+.from-controler form input[type='submit']:hover{
     background-color: #AEB110;
 }
-.from-controler from .p{
+.from-controler form .p{
     margin-top: 15px;
     font-size: 15px;
     color:#fff;
+    text-align: center;
 }
-.from-controler from p{
+.from-controler form .note{
     font-size: 0.8rem;
     color:yellow;
     text-align: center
+}
+/* ========================================
+        Responsive CSS
+======================================== */
+
+@media screen and (max-width: 768px) {
+    .from-controler{
+    margin:auto;
+    }
+}
+@media screen and (max-width: 768px) {
+    .from-controler form input[type='submit']{
+    width: 100px;
+    padding: 5px;
+    font-size: 1rem;
+    margin-top: 15px;
+    }
+    .from-controler form .note{
+        font-size: .7rem;
+    }
+    .from-controler form .p{
+        margin-top: 12px;
+        font-size: 12px;
+    }
+    .from-controler form input, textarea{
+        padding: 8px;
+        margin: 14px auto;
+        width: 80%;
+        font-size: 15px;
+    }
 }

@@ -8,14 +8,21 @@
     padding:20px 0;
     float: right;
 }
-.about h6{
+.about h1{
     margin: 35px 0;
-    font-size: 4rem;
+    text-align: left;
     color:white;
 }
 .about p{
     color:white;
 }
-p{
-    font-size:1.2rem;
+/* ========================================
+        Responsive CSS
+======================================== */
+
+@media screen and (max-width: 768px) {
+    .about iframe{
+        float: left;
+        width: 100%;
+    }
 }
