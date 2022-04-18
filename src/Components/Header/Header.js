@@ -42,7 +42,7 @@ const Header = () => {
                 location.pathname === "/" && <div className='welcome-section text-white text-center container'>
                     <h2 className='welcome-text'>WELCOME TO HOTEL ROYEL</h2>
                     <h6>Luxe amenities and unparalleled sophistication come to life at Hotel Washington. Historically known for its roster of A-list guests - including famous politicians, Hollywood starlets, and even the King of Rock and Roll, Elvis Presley - Hotel Washington has been at the center of the action since 1917. Following a thoughtful renovation in 2019, it is now a beacon of modern luxury where old and new blend seamlessly. Toast to skyline views at the iconic rooftop lounge, VUE, and explore the city's top attractions—just outside our doors.</h6>
-                    <button >Read More</button>
+                    <button  onClick={()=> menuLink(".about")}>Read More</button>
                 </div>
             }
         </section >
