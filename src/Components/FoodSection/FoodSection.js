@@ -15,7 +15,7 @@ const FoodSection = () => {
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZW_o8lf9MaD18-_Oz7SNjW7xxy5CoVapMDQ&usqp=CAU" loading="lazy" />
                 </div>
                 <div className='g-item-3'>
-                    <h1>Our Best <strong> Breakfast </strong> </h1>
+                    <h1>Our Best Breakfast</h1>
                     <p className='py-3'>Hotel accommodations are one of the biggest travel-related expenses. Whether you’re looking for a place to crash for a night or want a relaxing away from home where you can pamper yourself. So we will porvides Comfortable rooms with neat and clean attachments and fine interior design.</p>
                     <NavLink to="/foods"><button className='butn-control'>See More</button></NavLink>
                 </div>

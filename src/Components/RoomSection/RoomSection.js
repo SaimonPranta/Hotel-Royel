@@ -14,7 +14,7 @@ const FontPageOfRooms = () => {
                     <img src="https://ik.imgkit.net/3vlqs5axxjf/PCWW/uploadedImages/Articles/Notated_News(1)/the-shared-hotel-room.jpg?tr=w-800%2Ch-400%2Cfo-auto" loading="lazy" />
                 </div>
                 <div className='item-3'>
-                    <h1 className='py-2'>Choose The Perfect <strong> Accommodation </strong> </h1>
+                    <h1 className='py-2'>Choose The Perfect Accommodation </h1>
                     <p className='py-3 room-discription'>Hotel accommodations are one of the biggest travel-related expenses. Whether you’re looking for a place to crash for a night or want a relaxing away from home where you can pamper yourself. So we will porvides Comfortable rooms with neat and clean attachments and fine interior design.</p>
                     <NavLink to='/rooms'><button className='butn-control'>See More</button></NavLink>
                 </div>
